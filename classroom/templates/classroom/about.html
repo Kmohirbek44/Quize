@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'classroom/_guest_header.html' with active='about' %}
+  <h2>O'zingizni Python dasturlash tilini qanchalik bilishingiz haqida test oladigan platformaga hush kelipsoz! <span class="icon-emo-happy"></span></h2>
+  <p class="lead">
+    Agar accountiz bolsa <a href="{% url 'login' %}">Kirish</a>. Agar accountiz bolmasa  ro'yhardan o'ting<a href="{% url 'signup' %}">studentlar uchun</a> or a <a href="{% url 'teacher_signup' %}">O'qituvchi uchun</a>.
+  </p>
+  <hr>
+  <h3>Biz haqimizda</h3>
+  <p>
+    Bu sayt Muqaddas tomonidan qilingan
+  </p>
+
+{% endblock %}
