@@ -22,26 +22,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '8Db[e(c64){}=l*4%3wzsxcl_$$l9e0b!gtf!%g9$7)fmh5y=w7&8' # https://stackoverflow.com/a/53144229/2351696
+SECRET_KEY ='django-insecure-!2bk-5=(9zv)ysu4nsq*dd6%ug%hj5+4jb9a)omt(%hdov00p9' # https://stackoverflow.com/a/53144229/2351696
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = '*'
 
-WSGI_APPLICATION = 'site.wsgi.application'
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dekrq51dr4h4fq',
-        'USER':'qtuhgltloosbwp',
-        'PASSWORD':'81de4575934ff44dc8fb9cb8701ca653b0aaf0cb0e2f5698d4d70291eb0e23cb',
-        'HOST':'ec2-54-170-90-26.eu-west-1.compute.amazonaws.com',
-        'PORT':'5432',
-
-    }
-}
 
 # Application definition
 
@@ -68,8 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-    'social_django.middleware.SocialAuthExceptionMiddleware', 
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 
@@ -95,7 +82,19 @@ TEMPLATES = [
     },
 ]
 
+WSGI_APPLICATION = 'mysite.wsgi.application'
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dekrq51dr4h4fq',
+        'USER':'qtuhgltloosbwp',
+        'PASSWORD':'81de4575934ff44dc8fb9cb8701ca653b0aaf0cb0e2f5698d4d70291eb0e23cb',
+        'HOST':'ec2-54-170-90-26.eu-west-1.compute.amazonaws.com',
+        'PORT':'5432',
+
+    }
+}
 
 
 # Internationalization
@@ -120,7 +119,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# custom 
+# custom
 
 STATIC_ROOT = BASE_DIR / 'mysite' / 'staticfiles'
 STATICFILES_DIRS = [
